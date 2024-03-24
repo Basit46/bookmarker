@@ -73,7 +73,7 @@ const Bookmarks = () => {
         </div>
       </div>
 
-      <div className="pt-[20px] flex-1 pl-[30px] flex flex-wrap gap-[20px]">
+      <div className="pt-[20px] flex-1 pl-[30px] h-fit flex flex-wrap gap-[20px]">
         {bookmarksClone && bookmarksClone.length > 0 ? (
           bookmarksClone.map((bookmark, i) => (
             <Bookmark key={i} bookmark={bookmark} />

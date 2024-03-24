@@ -1,18 +1,19 @@
 import React from "react";
 import { useGlobalContext } from "../context/globalContext";
+import { FaTimes } from "react-icons/fa";
 
 const Bookmark = ({ bookmark }) => {
   const { deleteBookmark } = useGlobalContext();
 
   return (
-    <div className="w-[35%] bg-[skyblue] h-fit pb-[5px] py-[10px] px-[10px] rounded-[10px]">
-      <div className="flex justify-between items-center">
+    <div className="w-[30%] bg-[skyblue] h-fit pb-[5px] py-[10px] px-[10px] rounded-[10px]">
+      <div className="h-fit flex justify-between items-center">
         <h1 className="font-bold text-[1.2rem]">{bookmark.title}</h1>
         <button
           onClick={() => deleteBookmark(bookmark.id)}
           className="px-[8px] py-[4px] bg-[red] text-white"
         >
-          DELETE
+          <FaTimes />
         </button>
       </div>
       <div className="w-full border-t border-black h-0 my-[5px]" />

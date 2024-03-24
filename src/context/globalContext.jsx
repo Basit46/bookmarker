@@ -3,18 +3,19 @@ import { v4 as uuidv4 } from "uuid";
 import { db } from "../../firebase";
 import {
   onSnapshot,
-  collection,
   doc,
   setDoc,
   updateDoc,
-  arrayUnion,
   arrayRemove,
 } from "firebase/firestore";
 import { useAuthContext } from "./authContext";
+import { useNavigate } from "react-router-dom";
 
 const globalContext = createContext();
 
 const GlobalContextProvider = ({ children }) => {
+  const navigate = useNavigate();
+
   const { user } = useAuthContext();
 
   const [isAddCategoryOpen, setIsAddCategoryOpen] = useState(false);
@@ -139,7 +140,7 @@ const GlobalContextProvider = ({ children }) => {
         list: newList,
       });
 
-      alert("Added");
+      navigate("/bookmarks");
     } else {
       alert("sign In To Continue");
     }
