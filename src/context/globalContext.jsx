@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import { useAuthContext } from "./authContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const globalContext = createContext();
 
@@ -63,7 +64,7 @@ const GlobalContextProvider = ({ children }) => {
       );
 
       if (result || newCateg.trim().toLowerCase() == "all") {
-        alert("Already Exist");
+        toast("Already Exist");
       } else {
         let newList = [...categories, newCateg.trim()];
         setCategories(newList);
@@ -73,10 +74,10 @@ const GlobalContextProvider = ({ children }) => {
         });
 
         setIsAddCategoryOpen(false);
-        alert("Added Successfully");
+        toast("Added Successfully");
       }
     } else {
-      alert("sign In To Continue");
+      toast("sign In To Continue");
     }
   };
 
@@ -97,7 +98,7 @@ const GlobalContextProvider = ({ children }) => {
         list: newList,
       });
 
-      alert("Deleted");
+      toast("Deleted");
     }
   };
 
@@ -142,7 +143,7 @@ const GlobalContextProvider = ({ children }) => {
 
       navigate("/bookmarks");
     } else {
-      alert("sign In To Continue");
+      toast("sign In To Continue");
     }
   };
 
@@ -155,9 +156,9 @@ const GlobalContextProvider = ({ children }) => {
         list: newList,
       });
 
-      alert("Deleted");
+      toast("Deleted");
     } else {
-      alert("sign In To Continue");
+      toast("sign In To Continue");
     }
   };
 

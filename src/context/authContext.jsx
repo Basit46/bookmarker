@@ -6,6 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth } from "../../firebase";
+import { toast } from "react-toastify";
 
 const provider = new GoogleAuthProvider();
 
@@ -40,7 +41,7 @@ const AuthContextProvider = ({ children }) => {
   const signUserOut = () => {
     signOut(auth)
       .then(() => {
-        alert("Sign Out Success");
+        toast("Sign Out Success");
       })
       .catch((error) => {
         console.log(error);

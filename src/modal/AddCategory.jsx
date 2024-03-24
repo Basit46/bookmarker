@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { useGlobalContext } from "../context/globalContext";
+import { toast } from "react-toastify";
 
 const AddCategory = () => {
   const { isAddCategoryOpen, setIsAddCategoryOpen, addNewCategory } =
@@ -12,7 +13,7 @@ const AddCategory = () => {
     e.preventDefault();
 
     if (value == "") {
-      alert("Input the category name");
+      toast("Input the category name");
       return;
     }
 

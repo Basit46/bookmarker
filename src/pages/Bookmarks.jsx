@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Bookmark from "../components/Bookmark";
 import { useGlobalContext } from "../context/globalContext";
 import emptyGif from "../assets/empty.gif";
+import { useAuthContext } from "../context/authContext";
 
 const Bookmarks = () => {
   const {
@@ -15,14 +16,29 @@ const Bookmarks = () => {
     categFilter,
     setCategFilter,
   } = useGlobalContext();
+  const { user } = useAuthContext();
 
   return (
     <div className="pr-[30px] flex h-[100vh]">
       <div className="pt-[20px] px-[30px] bg-[#f4f6f7] w-[20%] h-full flex flex-col">
         <div>
-          <div className="h-[90px] w-[90px] rounded-full bg-[tomato]"></div>
+          <div className="h-[90px] w-[90px] rounded-full overflow-hidden bg-[tomato]">
+            {user?.photoURL && (
+              <img
+                className="h-full w-full object-cover"
+                src={user.photoURL}
+                alt="user photo"
+              />
+            )}
+          </div>
           <p className="mt-[10px] text-[1.4rem] font-semibold">
-            Hello Basit 👋!
+            Hello{" "}
+            {
+              user?.displayName.split(" ")[
+                user?.displayName.split(" ").length - 1
+              ]
+            }{" "}
+            👋!
           </p>
         </div>
 
