@@ -19,7 +19,7 @@ const Bookmarks = () => {
   const { user } = useAuthContext();
 
   return (
-    <div className="pr-[30px] flex h-[100vh]">
+    <div className="px-[50px] flex h-[100vh]">
       <div className="pt-[20px] px-[30px] bg-[#f4f6f7] w-[20%] h-full flex flex-col">
         <div>
           <div className="h-[90px] w-[90px] rounded-full overflow-hidden bg-[tomato]">

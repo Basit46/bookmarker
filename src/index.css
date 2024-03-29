@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url(https://db.onlinewebfonts.com/c/1ab988138e89585721c4233cdd2d44f0?family=HelveticaNowText+Regular);
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
+  .home p {
+    @apply border-b border-black py-[10px] font-semibold text-[1.4rem] font-Helvetica;
+  }
+
   li {
     @apply cursor-pointer;
   }

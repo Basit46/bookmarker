@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         Primary: ["Work Sans", "sans-serif"],
+        Helvetica: ["HelveticaNowText Regular", "sans-serif"],
       },
     },
   },
