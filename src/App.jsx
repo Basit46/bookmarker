@@ -8,10 +8,12 @@ import AddCategory from "./modal/AddCategory";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/Footer";
+import Logo from "./components/Logo";
 
 function App() {
   return (
     <div className="font-Primary">
+      <Logo />
       <Navbar />
 
       <Routes>

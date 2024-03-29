@@ -101,7 +101,7 @@ const Bookmarks = () => {
             <p className="mt-[10px] text-[1.3rem]">
               Empty,{" "}
               <Link to="/add" className="text-[blue] underline">
-                Add New Bookmarks
+                Create New Bookmark
               </Link>
             </p>
           </div>

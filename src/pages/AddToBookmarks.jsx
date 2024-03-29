@@ -30,7 +30,7 @@ const AddToBookmarks = () => {
     >
       <div>
         <h1 className="text-center font-medium text-[1.6rem]">
-          ADD TO BOOKMARKS
+          CREATE NEW BOOKMARK
         </h1>
         <p className="text-center italic opacity-70">* = Required</p>
       </div>
