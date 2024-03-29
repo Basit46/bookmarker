@@ -13,6 +13,10 @@
   textarea {
     @apply mb-[20px] block border border-black w-[400px] px-[5px] py-[3px];
   }
+
+  form label {
+    @apply text-[1.1rem] font-medium;
+  }
 }
 nav ul a.active {
   text-decoration: underline;

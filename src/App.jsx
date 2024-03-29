@@ -7,6 +7,7 @@ import AddToBookmarks from "./pages/AddToBookmarks";
 import AddCategory from "./modal/AddCategory";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Route path="/bookmarks" element={<Bookmarks />} />
         <Route path="/add" element={<AddToBookmarks />} />
       </Routes>
+
+      <Footer />
 
       {/* Modal */}
       <AddCategory />

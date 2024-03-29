@@ -23,11 +23,6 @@ const Bookmark = ({ bookmark }) => {
       </a>
       <p>{bookmark.note}</p>
 
-      <p className="mt-[20px]">
-        {bookmark.reminder == "true" &&
-          `Remind me when it is: ${bookmark.remindTime}`}
-      </p>
-
       <p className="mt-[20px] text-[0.8rem] font-medium">
         Added{" "}
         {new Date(

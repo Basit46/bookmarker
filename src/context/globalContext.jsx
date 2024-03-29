@@ -114,14 +114,7 @@ const GlobalContextProvider = ({ children }) => {
   };
 
   //ADD A NEW BOOKMARK
-  const addBookmark = async (
-    title,
-    link,
-    note,
-    reminder,
-    remindTime,
-    category
-  ) => {
+  const addBookmark = async (title, link, note, category) => {
     if (user) {
       let newList = [
         ...bookmarks,
@@ -130,8 +123,6 @@ const GlobalContextProvider = ({ children }) => {
           title,
           link,
           note,
-          reminder,
-          remindTime,
           addedTime: new Date(),
           category,
         },
