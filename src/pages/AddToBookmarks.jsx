@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import { useAuthContext } from "../context/authContext";
 import { useGlobalContext } from "../context/globalContext";
 
 const AddToBookmarks = () => {
   const { categories, addBookmark } = useGlobalContext();
+  const { user } = useAuthContext();
 
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
@@ -12,6 +15,11 @@ const AddToBookmarks = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!user) {
+      toast("Sign In To Continue");
+      return;
+    }
+
     if (title != "" && link != "" && category != "") {
       await addBookmark(title, link, note, category);
 
@@ -19,14 +27,14 @@ const AddToBookmarks = () => {
       setLink("");
       setNote("");
     } else {
-      alert("Input Required Values");
+      toast("Input Required Values");
     }
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="addTo w-full sm:w-fit my-[20px] px-[15px] sm:px-[30px] flex flex-col items-center"
+      className="addTo w-full mx-auto sm:w-fit my-[20px] px-[15px] sm:px-[30px] flex flex-col items-center"
     >
       <div>
         <h1 className="text-center font-medium text-[1.6rem]">

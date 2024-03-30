@@ -105,6 +105,8 @@ const GlobalContextProvider = ({ children }) => {
       });
 
       toast("Deleted");
+    } else {
+      toast("Sign In To Continue");
     }
   };
 

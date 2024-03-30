@@ -19,8 +19,8 @@ const Bookmarks = () => {
   const { user } = useAuthContext();
 
   return (
-    <div className="px-[20px] xl:px-[50px] mb-[50px] flex flex-col xl:flex-row min-h-[100vh] xl:h-[100vh]">
-      <div className="sticky top-[60px] xl:static p-[10px] xl:pt-[20px] xl:px-[30px] bg-[#f4f6f7] w-full xl:w-[20%] h-full flex flex-row xl:flex-col">
+    <div className="px-[20px] xmd:px-[50px] mb-[50px] flex flex-col xl:flex-row min-h-[100vh] xl:h-[100vh]">
+      <div className="sticky top-[60px] xl:static p-[10px] xl:pt-[20px] xl:px-[30px] bg-[#f4f6f7] w-full xl:w-[20%] h-full flex flex-row justify-between xmd:justify-start xl:flex-col">
         <div className="hidden xmd:block ">
           <div className="h-[90px] w-[90px] rounded-full overflow-hidden bg-[tomato]">
             {user?.photoURL && (
@@ -42,7 +42,7 @@ const Bookmarks = () => {
           </p>
         </div>
 
-        <ul className="xl:mt-[40px] xl:mb-[50px] xmd:mx-[20px] xl:mx-0 flex-1 xl:flex-auto flex flex-row items-center xl:items-start xl:flex-col gap-[10px]">
+        <ul className="h-fit xl:mt-[40px] xl:mb-[50px] xmd:mx-[20px] flex-wrap w-[80%] md:w-[70%] xmd:w-full xl:mx-0 xmd:flex-1 xl:flex-none flex flex-row items-center xl:items-start xl:flex-col gap-[10px]">
           <li
             className={`${
               categFilter == "all" ? "opacity-100" : "opacity-60"
@@ -54,10 +54,11 @@ const Bookmarks = () => {
           >
             View All
           </li>
+
           {categories.map((categ, i) => (
             <li
               key={i}
-              className="text-[0.9rem] md:text-[1.2rem] flex justify-between gap-[20px] xl:gap-0 items-center group hover:underline xl:hover:no-underline"
+              className="text-[0.9rem] md:text-[1.2rem] xl:w-full flex justify-between items-center group hover:border-b"
             >
               <p
                 className={`${

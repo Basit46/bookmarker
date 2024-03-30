@@ -6,7 +6,7 @@ const Footer = () => {
       <p className="text-center text-[1.2rem] font-medium">
         Created with ❤️ by{" "}
         <a
-          className="text-[blue]"
+          className="text-[gold]"
           href="https://devbasit.vercel.app/"
           target="blank"
         >
