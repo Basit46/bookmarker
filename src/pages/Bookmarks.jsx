@@ -19,9 +19,9 @@ const Bookmarks = () => {
   const { user } = useAuthContext();
 
   return (
-    <div className="px-[50px] flex h-[100vh]">
-      <div className="pt-[20px] px-[30px] bg-[#f4f6f7] w-[20%] h-full flex flex-col">
-        <div>
+    <div className="px-[20px] xl:px-[50px] mb-[50px] flex flex-col xl:flex-row h-fit xl:h-[100vh]">
+      <div className="sticky top-[60px] xl:static p-[10px] xl:pt-[20px] xl:px-[30px] bg-[#f4f6f7] w-full xl:w-[20%] h-full flex flex-row xl:flex-col">
+        <div className="hidden xmd:block ">
           <div className="h-[90px] w-[90px] rounded-full overflow-hidden bg-[tomato]">
             {user?.photoURL && (
               <img
@@ -42,11 +42,11 @@ const Bookmarks = () => {
           </p>
         </div>
 
-        <ul className="mt-[40px] mb-[50px] flex flex-col gap-[10px]">
+        <ul className="xl:mt-[40px] xl:mb-[50px] xmd:mx-[20px] xl:mx-0 flex-1 xl:flex-auto flex flex-row items-center xl:items-start xl:flex-col gap-[10px]">
           <li
             className={`${
               categFilter == "all" ? "opacity-100" : "opacity-60"
-            } text-[1.2rem]`}
+            } text-[0.9rem] md:text-[1.2rem] h-fit`}
             onClick={() => {
               filterBookmarks("all");
               setCategFilter("all");
@@ -57,7 +57,7 @@ const Bookmarks = () => {
           {categories.map((categ, i) => (
             <li
               key={i}
-              className="text-[1.2rem] flex justify-between items-center group"
+              className="text-[0.9rem] md:text-[1.2rem] flex justify-between gap-[20px] xl:gap-0 items-center group hover:underline xl:hover:no-underline"
             >
               <p
                 className={`${
@@ -78,8 +78,10 @@ const Bookmarks = () => {
           ))}
         </ul>
 
-        <div className="flex items-center justify-between">
-          <p>Add New Category</p>
+        <div className="flex items-center gap-[5px] md:gap-[20px] xl:gap-0 justify-between">
+          <p>
+            Add <span className="hidden md:inline">New Category</span>
+          </p>
           <button
             onClick={() => setIsAddCategoryOpen(true)}
             className="bg-[green] text-white p-[4px]"
@@ -89,7 +91,7 @@ const Bookmarks = () => {
         </div>
       </div>
 
-      <div className="pt-[20px] flex-1 pl-[30px] h-fit flex flex-wrap gap-[20px]">
+      <div className="pt-[20px] flex-1 xl:pl-[30px] h-fit flex flex-wrap gap-[20px]">
         {bookmarksClone && bookmarksClone.length > 0 ? (
           bookmarksClone.map((bookmark, i) => (
             <Bookmark key={i} bookmark={bookmark} />

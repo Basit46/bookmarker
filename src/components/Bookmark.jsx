@@ -6,7 +6,7 @@ const Bookmark = ({ bookmark }) => {
   const { deleteBookmark } = useGlobalContext();
 
   return (
-    <div className="w-[30%] bg-[skyblue] h-fit pb-[5px] py-[10px] px-[10px] rounded-[10px]">
+    <div className="w-full sm:w-[48%] xmd:w-[30%] bg-[skyblue] h-fit pb-[5px] py-[10px] px-[10px] rounded-[10px]">
       <div className="h-fit flex justify-between items-center">
         <h1 className="font-bold text-[1.2rem]">{bookmark.title}</h1>
         <button

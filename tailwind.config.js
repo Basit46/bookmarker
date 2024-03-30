@@ -7,6 +7,10 @@ export default {
         Primary: ["Work Sans", "sans-serif"],
         Helvetica: ["HelveticaNowText Regular", "sans-serif"],
       },
+      screens: {
+        vsm: "450px",
+        xmd: "900px",
+      },
     },
   },
   plugins: [],
