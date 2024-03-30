@@ -17,7 +17,8 @@ const Bookmark = ({ bookmark }) => {
         </button>
       </div>
       <div className="w-full border-t border-black h-0 my-[5px]" />
-      <p>Category: {bookmark.category}</p>
+      {bookmark.category && <p>Category: {bookmark.category}</p>}
+
       <a className="text-[blue]" href={bookmark.link} target="blank">
         {bookmark.link}
       </a>

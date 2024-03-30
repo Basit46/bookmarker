@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaTimes } from "react-icons/fa";
 import { useGlobalContext } from "../context/globalContext";
 import { toast } from "react-toastify";
@@ -9,7 +9,15 @@ const AddCategory = () => {
 
   const [value, setValue] = useState("");
 
-  const handleAdd = (e) => {
+  const inputRef = useRef();
+
+  useEffect(() => {
+    if (isAddCategoryOpen) {
+      inputRef.current.focus();
+    }
+  }, [isAddCategoryOpen]);
+
+  const handleAdd = async (e) => {
     e.preventDefault();
 
     if (value == "") {
@@ -17,7 +25,8 @@ const AddCategory = () => {
       return;
     }
 
-    addNewCategory(value);
+    await addNewCategory(value);
+    setValue("");
   };
   return (
     <div
@@ -41,6 +50,7 @@ const AddCategory = () => {
         <input
           className="mt-[10px] mb-[20px] w-full block px-[7px] py-[3px] border border-black"
           type="text"
+          ref={inputRef}
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Cooking"

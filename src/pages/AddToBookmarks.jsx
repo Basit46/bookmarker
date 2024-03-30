@@ -4,13 +4,13 @@ import { useAuthContext } from "../context/authContext";
 import { useGlobalContext } from "../context/globalContext";
 
 const AddToBookmarks = () => {
-  const { categories, addBookmark } = useGlobalContext();
+  const { categories, addBookmark, setIsAddCategoryOpen } = useGlobalContext();
   const { user } = useAuthContext();
 
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
   const [note, setNote] = useState("");
-  const [category, setCategory] = useState("Sports");
+  const [category, setCategory] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,19 +20,20 @@ const AddToBookmarks = () => {
       return;
     }
 
-    if (title != "" && link != "" && category != "") {
+    if (title != "" && link != "") {
       await addBookmark(title, link, note, category);
 
       setTitle("");
       setLink("");
       setNote("");
+      setCategory("");
     } else {
       toast("Input Required Values");
     }
   };
 
   return (
-    <form
+    <div
       onSubmit={handleSubmit}
       className="addTo w-full mx-auto sm:w-fit my-[20px] px-[15px] sm:px-[30px] flex flex-col items-center"
     >
@@ -78,18 +79,27 @@ const AddToBookmarks = () => {
         </div>
 
         <div>
-          <label htmlFor="categ">*Category:</label>
+          <label htmlFor="categ">Category:</label>
           <select
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => {
+              setCategory(e.target.value);
+            }}
             id="categ"
           >
+            <option value="">Select an option</option>
             {categories.map((categ, i) => (
               <option key={i} value={categ}>
                 {categ}
               </option>
             ))}
           </select>
+          <button
+            className="mt-[-20px] text-[blue] underline ml-0"
+            onClick={() => setIsAddCategoryOpen(true)}
+          >
+            Add New Category
+          </button>
         </div>
       </div>
 
@@ -99,7 +109,7 @@ const AddToBookmarks = () => {
       >
         ADD TO BOOKMARK
       </button>
-    </form>
+    </div>
   );
 };
 

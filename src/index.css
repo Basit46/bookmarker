@@ -13,13 +13,17 @@
   li {
     @apply cursor-pointer;
   }
-  form input,
-  form select,
+  .addTo input,
   textarea {
-    @apply mb-[20px] block border border-black w-full sm:w-[400px] px-[5px] py-[3px];
+    @apply mb-[20px];
+  }
+  .addTo input,
+  .addTo select,
+  textarea {
+    @apply block border border-black w-full sm:w-[400px] px-[5px] py-[3px];
   }
 
-  form label {
+  .addTo label {
     @apply text-[1.1rem] font-medium;
   }
 }
