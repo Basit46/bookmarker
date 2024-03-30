@@ -26,7 +26,7 @@ const AddToBookmarks = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="addTo my-[20px] px-[30px] flex flex-col items-center"
+      className="addTo w-full sm:w-fit my-[20px] px-[15px] sm:px-[30px] flex flex-col items-center"
     >
       <div>
         <h1 className="text-center font-medium text-[1.6rem]">
@@ -35,7 +35,7 @@ const AddToBookmarks = () => {
         <p className="text-center italic opacity-70">* = Required</p>
       </div>
 
-      <div className="my-[20px]">
+      <div className="w-full sm:w-fit my-[20px]">
         <div>
           <label htmlFor="title">*Title:</label>
           <input

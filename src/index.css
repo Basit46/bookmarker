@@ -16,7 +16,7 @@
   form input,
   form select,
   textarea {
-    @apply mb-[20px] block border border-black w-[400px] px-[5px] py-[3px];
+    @apply mb-[20px] block border border-black w-full sm:w-[400px] px-[5px] py-[3px];
   }
 
   form label {

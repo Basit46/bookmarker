@@ -19,7 +19,7 @@ const Bookmarks = () => {
   const { user } = useAuthContext();
 
   return (
-    <div className="px-[20px] xl:px-[50px] mb-[50px] flex flex-col xl:flex-row h-fit xl:h-[100vh]">
+    <div className="px-[20px] xl:px-[50px] mb-[50px] flex flex-col xl:flex-row min-h-[100vh] xl:h-[100vh]">
       <div className="sticky top-[60px] xl:static p-[10px] xl:pt-[20px] xl:px-[30px] bg-[#f4f6f7] w-full xl:w-[20%] h-full flex flex-row xl:flex-col">
         <div className="hidden xmd:block ">
           <div className="h-[90px] w-[90px] rounded-full overflow-hidden bg-[tomato]">
@@ -100,7 +100,7 @@ const Bookmarks = () => {
           <div className="w-full h-full flex flex-col items-center mt-[30px] ">
             <img className="w-[50%]" src={emptyGif} alt="emmpty gif" />
 
-            <p className="mt-[10px] text-[1.3rem]">
+            <p className="mt-[10px] sm:text-[1.3rem]">
               Empty,{" "}
               <Link to="/add" className="text-[blue] underline">
                 Create New Bookmark
