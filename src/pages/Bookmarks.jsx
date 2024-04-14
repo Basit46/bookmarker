@@ -73,7 +73,7 @@ const Bookmarks = () => {
               </p>
               <FaTimes
                 onClick={() => deleteCategory(categ)}
-                className="hidden group-hover:block bg-[red] text-white p-[2px]"
+                className="hidden ml-[4px] vsm:ml-0 group-hover:block bg-[red] text-white p-[2px]"
               />
             </li>
           ))}
