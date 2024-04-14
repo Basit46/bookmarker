@@ -19,7 +19,7 @@ const Bookmarks = () => {
   const { user } = useAuthContext();
 
   return (
-    <div className="px-[20px] xmd:px-[50px] mb-[50px] flex flex-col xl:flex-row min-h-[100vh] xl:h-[100vh]">
+    <div className="px-[20px] xmd:px-[50px] mb-[50px] flex flex-col xl:flex-row min-h-[100vh]">
       <div className="sticky top-[60px] xl:static p-[10px] xl:pt-[20px] xl:px-[30px] bg-[#f4f6f7] w-full xl:w-[20%] h-full flex flex-row justify-between xmd:justify-start xl:flex-col">
         <div className="hidden xmd:block ">
           <div className="h-[90px] w-[90px] rounded-full overflow-hidden bg-[tomato]">
@@ -92,7 +92,7 @@ const Bookmarks = () => {
         </div>
       </div>
 
-      <div className="pt-[20px] flex-1 xl:pl-[30px] h-fit flex flex-wrap gap-[20px]">
+      <div className="pt-[20px] xl:flex-1 xl:pl-[30px] h-fit flex flex-wrap gap-[20px]">
         {bookmarksClone && bookmarksClone.length > 0 ? (
           bookmarksClone.map((bookmark, i) => (
             <Bookmark key={i} bookmark={bookmark} />

@@ -6,8 +6,8 @@ const Bookmark = ({ bookmark }) => {
   const { deleteBookmark } = useGlobalContext();
 
   return (
-    <div className="w-full sm:w-[48%] xmd:w-[30%] bg-[skyblue] h-fit pb-[5px] py-[10px] px-[10px] rounded-[10px]">
-      <div className="h-fit flex justify-between items-center">
+    <div className="w-full sm:w-[48%] xmd:w-[30%] bg-[skyblue] h-fit flex flex-col gap-[5px] pb-[5px] py-[10px] px-[10px] rounded-[10px]">
+      <div className="border-b border-black pb-[5px] h-fit flex justify-between items-center">
         <h1 className="font-bold text-[1.2rem]">{bookmark.title}</h1>
         <button
           onClick={() => deleteBookmark(bookmark.id)}
@@ -16,13 +16,14 @@ const Bookmark = ({ bookmark }) => {
           <FaTimes />
         </button>
       </div>
-      <div className="w-full border-t border-black h-0 my-[5px]" />
+
       {bookmark.category && <p>Category: {bookmark.category}</p>}
 
-      <a className="text-[blue]" href={bookmark.link} target="blank">
-        {bookmark.link}
+      <a className="text-[blue] underline" href={bookmark.link} target="blank">
+        CLICK ON LINK
       </a>
-      <p>{bookmark.note}</p>
+
+      <p>Desc: {bookmark.note}</p>
 
       <p className="mt-[20px] text-[0.8rem] font-medium">
         Added{" "}
