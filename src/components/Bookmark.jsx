@@ -36,8 +36,4 @@ const Bookmark = ({ bookmark }) => {
   );
 };
 
-Bookmark.propTypes = {
-  bookmark: PropTypes.object.isRequired, // Assuming bookmark is an object, adjust as needed
-};
-
 export default Bookmark;
