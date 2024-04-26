@@ -43,7 +43,7 @@ const Bookmarks = () => {
         </div>
 
         <ul className="h-fit xl:mt-[40px] xl:mb-[50px] xmd:mx-[20px] flex-wrap w-[80%] md:w-[70%] xmd:w-full xl:mx-0 xmd:flex-1 xl:flex-none flex flex-row items-center xl:items-start xl:flex-col gap-[10px]">
-          <li
+          <button
             className={`${
               categFilter == "all" ? "opacity-100" : "opacity-60"
             } text-[0.9rem] md:text-[1.2rem] h-fit`}
@@ -53,14 +53,14 @@ const Bookmarks = () => {
             }}
           >
             View All
-          </li>
+          </button>
 
           {categories.map((categ, i) => (
-            <li
+            <button
               key={i}
               className="text-[0.9rem] md:text-[1.2rem] xl:w-full flex justify-between items-center group hover:border-b"
             >
-              <p
+              <button
                 className={`${
                   categFilter == categ ? "opacity-100" : "opacity-60"
                 }`}
@@ -70,12 +70,12 @@ const Bookmarks = () => {
                 }}
               >
                 {categ}
-              </p>
+              </button>
               <FaTimes
                 onClick={() => deleteCategory(categ)}
                 className="hidden ml-[4px] vsm:ml-0 group-hover:block bg-[red] text-white p-[2px]"
               />
-            </li>
+            </button>
           ))}
         </ul>
 
@@ -94,9 +94,9 @@ const Bookmarks = () => {
 
       <div className="pt-[20px] xl:flex-1 xl:pl-[30px] h-fit flex flex-wrap gap-[20px]">
         {bookmarksClone && bookmarksClone.length > 0 ? (
-          bookmarksClone.map((bookmark, i) => (
-            <Bookmark key={i} bookmark={bookmark} />
-          ))
+          [...bookmarksClone]
+            .reverse()
+            .map((bookmark, i) => <Bookmark key={i} bookmark={bookmark} />)
         ) : (
           <div className="w-full h-full flex flex-col items-center mt-[30px] ">
             <img className="w-[50%]" src={emptyGif} alt="emmpty gif" />
